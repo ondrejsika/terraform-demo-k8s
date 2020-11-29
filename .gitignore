@@ -1,0 +1,11 @@
+.state
+.DS_Store
+.terraform
+terraform.tfvars
+.terraform.tfstate.lock.info
+*.tfstate
+*.backup
+*.log
+
+kubeconfig.yml
+kubeconfig-sikademo
