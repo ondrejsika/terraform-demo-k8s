@@ -2,7 +2,7 @@ apply:
 	terraform apply
 
 save-config:
-	terraform output kubeconfig > kubeconfig.yml
+	terraform output -raw kubeconfig > kubeconfig.yml
 
 add-config: save-config
 	cp ~/.kube/config ~/.kube/config.$$(date +%Y-%m-%d_%H-%M-%S).backup
