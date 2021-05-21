@@ -2,6 +2,7 @@
 .DS_Store
 .terraform
 terraform.tfvars
+terraform.auto.tfvars
 .terraform.tfstate.lock.info
 *.tfstate
 *.backup
