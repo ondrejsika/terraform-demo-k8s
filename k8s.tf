@@ -2,7 +2,7 @@ resource "digitalocean_kubernetes_cluster" "sikademo" {
   name   = "sikademo"
   region = "fra1"
   // Get available versions using: doctl kubernetes options versions
-  version = "1.20.8-do.0"
+  version = "1.21.5-do.0"
 
   node_pool {
     name = "sikademo"
