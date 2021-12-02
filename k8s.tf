@@ -19,20 +19,20 @@ resource "digitalocean_loadbalancer" "sikademo" {
   droplet_tag = "k8s:${digitalocean_kubernetes_cluster.sikademo.id}"
 
   healthcheck {
-    port     = 30001
+    port     = 80
     protocol = "tcp"
   }
 
   forwarding_rule {
     entry_port      = 80
-    target_port     = 30001
+    target_port     = 80
     entry_protocol  = "tcp"
     target_protocol = "tcp"
   }
 
   forwarding_rule {
     entry_port      = 443
-    target_port     = 30002
+    target_port     = 443
     entry_protocol  = "tcp"
     target_protocol = "tcp"
   }
