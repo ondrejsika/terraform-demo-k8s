@@ -18,7 +18,7 @@ install-ingress:
 	KUBECONFIG=kubeconfig.yml kubectl apply -f https://raw.githubusercontent.com/ondrejsika/kubernetes-ingress-traefik/master/ingress-traefik.yml
 
 commit-k8s-version-update:
-	git add k8s.tf && git commit -m "feat(k8s): Update Kubernetes version"
+	git add config.tf && git commit -m "feat(k8s): Update Kubernetes version"
 
 fmt:
 	terraform fmt -recursive

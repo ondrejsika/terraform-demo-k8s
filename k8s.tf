@@ -1,20 +1,19 @@
 resource "digitalocean_kubernetes_cluster" "sikademo" {
   name   = "sikademo"
-  region = "fra1"
+  region = local.region
   // Get available versions using: doctl kubernetes options versions
-  version = "1.22.7-do.0"
+  version = local.k8s_version
 
   node_pool {
     name = "sikademo"
-    // Get available sizes using: doctl kubernetes options sizes
-    size       = "s-4vcpu-8gb"
-    node_count = 3
+    size       = local.node_size
+    node_count = local.node_count
   }
 }
 
 resource "digitalocean_loadbalancer" "sikademo" {
   name   = "sikademo"
-  region = "fra1"
+  region = local.region
 
   droplet_tag = "k8s:${digitalocean_kubernetes_cluster.sikademo.id}"
 
