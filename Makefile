@@ -17,6 +17,32 @@ get-sizes:
 commit-k8s-version-update:
 	git add config.tf && git commit -m "feat(k8s): Update Kubernetes version"
 
+install-essentials:
+	make install-ingress
+	make install-cert-manager
+	make clusterissuer-letsencrypt
+
+install-ingress:
+	helm upgrade --install \
+		ingress-nginx ingress-nginx \
+		--repo https://kubernetes.github.io/ingress-nginx \
+		--create-namespace \
+		--namespace ingress-nginx \
+		--wait \
+		--values ./ingress-nginx.values.yml
+
+install-cert-manager:
+	helm upgrade --install \
+		cert-manager cert-manager \
+		--repo https://charts.jetstack.io \
+		--create-namespace \
+		--namespace cert-manager \
+		--wait \
+		--values ./cert-manager.values.yml
+
+install-clusterissuer-letsencrypt:
+	kubectl apply -f clusterissuer-letsencrypt.yml
+
 fmt:
 	terraform fmt -recursive
 
