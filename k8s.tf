@@ -5,7 +5,7 @@ resource "digitalocean_kubernetes_cluster" "sikademo" {
   version = local.k8s_version
 
   node_pool {
-    name = "sikademo"
+    name       = "sikademo"
     size       = local.node_size
     node_count = local.node_count
   }
