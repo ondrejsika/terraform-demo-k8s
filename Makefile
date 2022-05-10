@@ -43,6 +43,9 @@ install-cert-manager:
 install-clusterissuer-letsencrypt:
 	kubectl apply -f clusterissuer-letsencrypt.yml
 
+install-metrics-server:
+	kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
 fmt:
 	terraform fmt -recursive
 
