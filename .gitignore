@@ -1,3 +1,5 @@
+.vscode
+
 .state
 .DS_Store
 .terraform
