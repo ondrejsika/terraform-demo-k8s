@@ -8,6 +8,8 @@ controller:
     enabled: true
   metrics:
     enabled: true
+  config:
+    use-proxy-protocol: true
 defaultBackend:
   enabled: true
   image:
