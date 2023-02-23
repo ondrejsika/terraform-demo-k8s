@@ -9,7 +9,7 @@ controller:
   metrics:
     enabled: true
   config:
-    use-proxy-protocol: true
+    use-proxy-protocol: false
 defaultBackend:
   enabled: true
   image:

@@ -15,7 +15,7 @@ resource "digitalocean_loadbalancer" "sikademo" {
   name   = "sikademo"
   region = local.region
 
-  enable_proxy_protocol = true
+  enable_proxy_protocol = false
 
   droplet_tag = "k8s:${digitalocean_kubernetes_cluster.sikademo.id}"
 
