@@ -1,18 +1,18 @@
 resource "digitalocean_kubernetes_cluster" "sikademo" {
-  name   = "sikademo"
+  name   = local.cluster_name
   region = local.region
   // Get available versions using: doctl kubernetes options versions
   version = local.k8s_version
 
   node_pool {
-    name       = "sikademo"
+    name       = local.cluster_name
     size       = local.node_size
     node_count = local.node_count
   }
 }
 
 resource "digitalocean_loadbalancer" "sikademo" {
-  name   = "sikademo"
+  name   = local.cluster_name
   region = local.region
 
   enable_proxy_protocol = false

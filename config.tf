@@ -1,4 +1,7 @@
 locals {
+  record_name  = "k8s"
+  cluster_name = "sikademo"
+
   // Get available regions using: doctl kubernetes options regions
   region = "fra1"
   // Get available versions using: doctl kubernetes options versions
