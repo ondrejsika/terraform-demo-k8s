@@ -1,10 +1,10 @@
 apply:
 	terraform apply
 
-save-config:
+kubeconfig-get:
 	terraform output -raw kubeconfig > kubeconfig.yml
 
-add-config: save-config
+kubeconfig-add: kubeconfig-get
 	cp ~/.kube/config ~/.kube/config.$$(date +%Y-%m-%d_%H-%M-%S).backup
 	KUBECONFIG=kubeconfig.yml:~/.kube/config kubectl config view --raw > /tmp/kubeconfig.merge.yml && cp /tmp/kubeconfig.merge.yml ~/.kube/config
 
