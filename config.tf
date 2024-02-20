@@ -2,6 +2,12 @@ locals {
   record_name  = "k8s"
   cluster_name = "sikademo"
 
+  extra_records = [
+    "example-prod-${local.cluster_name}",
+    "example-test-${local.cluster_name}",
+    "example-dev-${local.cluster_name}",
+  ]
+
   // Get available regions using: doctl kubernetes options regions
   region = "fra1"
   // Get available versions using: doctl kubernetes options versions

@@ -14,6 +14,16 @@ resource "cloudflare_record" "k8s_wildcard" {
   proxied = false
 }
 
+resource "cloudflare_record" "k8s_extra_records" {
+  for_each = toset(local.extra_records)
+
+  zone_id = local.sikademo_com_zone_id
+  name    = each.key
+  value   = cloudflare_record.k8s.hostname
+  type    = "CNAME"
+  proxied = false
+}
+
 resource "cloudflare_record" "k8s_prod" {
   zone_id = local.sikademo_com_zone_id
   name    = "${cloudflare_record.k8s.name}-prod"
