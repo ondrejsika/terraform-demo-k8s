@@ -6,6 +6,10 @@ locals {
     "example-prod-${local.cluster_name}",
     "example-test-${local.cluster_name}",
     "example-dev-${local.cluster_name}",
+
+    "example-prod-${local.record_name}",
+    "example-test-${local.record_name}",
+    "example-dev-${local.record_name}",
   ]
 
   // Get available regions using: doctl kubernetes options regions
