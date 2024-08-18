@@ -55,3 +55,16 @@ resource "cloudflare_record" "k8s_dev_wildcard" {
   type    = "CNAME"
   proxied = false
 }
+
+output "domains" {
+  value = concat([
+    cloudflare_record.k8s.hostname,
+    cloudflare_record.k8s_wildcard.hostname,
+    cloudflare_record.k8s_prod.hostname,
+    cloudflare_record.k8s_prod_wildcard.hostname,
+    cloudflare_record.k8s_dev.hostname,
+    cloudflare_record.k8s_dev_wildcard.hostname,
+    ], [
+    for record in cloudflare_record.k8s_extra_records : record.hostname
+  ])
+}
