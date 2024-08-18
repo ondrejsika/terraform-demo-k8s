@@ -1,14 +1,35 @@
-.vscode
-
-.state
+# Mac
 .DS_Store
-.terraform
-terraform.tfvars
-terraform.auto.tfvars
-.terraform.tfstate.lock.info
-*.tfstate
-*.backup
-*.log
 
+# Editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Generic
+*.log
+*.backup
+*.local.sh
+*.local.yml
+*.local.yaml
+*.local.json
+*.local.txt
+
+# Terraform
+.terraform
+*.tfstate
+.terraform.tfstate.lock.info
+*.tfvars
+!*.EXAMPLE.tfvars
+override.tf
+
+# Infracost
+.infracost
+.infracost-reports
+
+# Kuberneres
 kubeconfig.yml
-kubeconfig-sikademo
+kubeconfig.*.yml
+kubeconfig-sikademo/
