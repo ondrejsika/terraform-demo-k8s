@@ -22,6 +22,9 @@ install-essentials:
 	make install-cert-manager
 	make install-clusterissuer-letsencrypt
 
+install-essentials-slu:
+	slu scripts kubernetes install-all -d k8s.sikademo.com
+
 install-ingress:
 	helm upgrade --install \
 		ingress-nginx ingress-nginx \
