@@ -10,6 +10,8 @@ locals {
     "example-prod-${local.record_name}",
     "example-test-${local.record_name}",
     "example-dev-${local.record_name}",
+    "artifactory",
+    "harbor",
   ]
 
   // Get available regions using: doctl kubernetes options regions
