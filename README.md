@@ -5,6 +5,9 @@
 >
 > 👉 [Více informací a registrace zde](https://ondrej-sika.cz/skoleni/kubernetes)
 
+> [!NOTE]
+> This is a demo / example reposiotry.
+
 # [DEMO] Kubernetes on DigitalOcean
 
     Ondrej Sika <ondrej@ondrejsika.com>
