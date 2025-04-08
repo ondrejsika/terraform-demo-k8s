@@ -12,6 +12,7 @@ locals {
     "example-dev-${local.record_name}",
     "artifactory",
     "harbor",
+    "keycloak",
   ]
 
   // Get available regions using: doctl kubernetes options regions
