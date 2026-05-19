@@ -3,6 +3,7 @@ locals {
   cluster_name = "sikademo"
 
   extra_records = [
+    "adecco",
     "example-prod-${local.cluster_name}",
     "example-test-${local.cluster_name}",
     "example-dev-${local.cluster_name}",
@@ -18,7 +19,7 @@ locals {
   // Get available regions using: doctl kubernetes options regions
   region = "fra1"
   // Get available versions using: doctl kubernetes options versions
-  k8s_version = "1.35.1-do.2"
+  k8s_version = "1.35.1-do.6"
   // Get available sizes using: doctl kubernetes options sizes
   node_size  = "s-4vcpu-8gb"
   node_count = 3
