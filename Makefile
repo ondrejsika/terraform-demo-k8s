@@ -14,6 +14,9 @@ get-versions:
 get-sizes:
 	doctl kubernetes options sizes
 
+update-k8s-version:
+	.scripts/update-k8s-version.sh
+
 commit-k8s-version-update:
 	git add config.tf && git commit -m "feat(k8s): Update Kubernetes version"
 
