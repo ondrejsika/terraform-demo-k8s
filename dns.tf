@@ -1,7 +1,7 @@
 resource "cloudflare_record" "k8s" {
   zone_id = local.sikademo_com_zone_id
   name    = local.record_name
-  value   = digitalocean_loadbalancer.sikademo.ip
+  value   = digitalocean_loadbalancer.lb.ip
   type    = "A"
   proxied = false
 }

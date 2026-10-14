@@ -1,4 +1,4 @@
-resource "digitalocean_kubernetes_cluster" "sikademo" {
+resource "digitalocean_kubernetes_cluster" "cluster" {
   name   = local.cluster_name
   region = local.region
   // Get available versions using: doctl kubernetes options versions
@@ -11,13 +11,13 @@ resource "digitalocean_kubernetes_cluster" "sikademo" {
   }
 }
 
-resource "digitalocean_loadbalancer" "sikademo" {
+resource "digitalocean_loadbalancer" "lb" {
   name   = local.cluster_name
   region = local.region
 
   enable_proxy_protocol = false
 
-  droplet_tag = "k8s:${digitalocean_kubernetes_cluster.sikademo.id}"
+  droplet_tag = "k8s:${digitalocean_kubernetes_cluster.cluster.id}"
 
   healthcheck {
     port     = 80
@@ -54,10 +54,10 @@ resource "digitalocean_loadbalancer" "sikademo" {
 }
 
 output "lb_ip" {
-  value = digitalocean_loadbalancer.sikademo.ip
+  value = digitalocean_loadbalancer.lb.ip
 }
 
 output "kubeconfig" {
-  value     = digitalocean_kubernetes_cluster.sikademo.kube_config.0.raw_config
+  value     = digitalocean_kubernetes_cluster.cluster.kube_config.0.raw_config
   sensitive = true
 }
