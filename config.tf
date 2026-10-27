@@ -14,6 +14,8 @@ locals {
     "artifactory",
     "harbor",
     "keycloak",
+    "vault",
+    "vault-auto-unseal",
   ]
 
   // Get available regions using: doctl kubernetes options regions
