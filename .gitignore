@@ -16,6 +16,7 @@
 *.local.yaml
 *.local.json
 *.local.txt
+*.local.md
 
 # Terraform
 .terraform
