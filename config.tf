@@ -3,7 +3,6 @@ locals {
   cluster_name = "sikademo"
 
   extra_records = [
-    "adecco",
     "example-prod-${local.cluster_name}",
     "example-test-${local.cluster_name}",
     "example-dev-${local.cluster_name}",
