@@ -11,3 +11,28 @@
 > This is a demo / example reposiotry.
 
 # [DEMO] Kubernetes on DigitalOcean
+
+This repository sets up a Kubernetes cluster on DigitalOcean with Load Balancer and DNS records on Cloudflare using Terraform.
+
+## Usage
+
+Create `_terraform.auto.tfvars` with your credentials (see `_terraform.auto.EXAMPLE.tfvars`):
+
+```hcl
+digitalocean_token   = "xxx"
+cloudflare_api_token = "xxx"
+```
+
+Create the infrastructure:
+
+```
+terraform init
+terraform apply
+```
+
+Get the kubeconfig:
+
+```
+make kubeconfig-get # writes kubeconfig.yml
+make kubeconfig-add # merges it into ~/.kube/config (with backup)
+```
