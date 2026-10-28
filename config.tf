@@ -15,6 +15,7 @@ locals {
     "keycloak",
     "vault",
     "vault-auto-unseal",
+    "zabbix",
   ]
 
   // Get available regions using: doctl kubernetes options regions
