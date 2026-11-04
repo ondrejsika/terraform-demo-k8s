@@ -13,6 +13,8 @@ locals {
     "artifactory",
     "harbor",
     "keycloak",
+    "keycloak-dev",
+    "keycloak-test",
     "vault",
     "vault-auto-unseal",
     "zabbix",
